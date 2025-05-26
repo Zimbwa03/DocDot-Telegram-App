@@ -1,0 +1,6 @@
+_pa_run(u'/home/Ngonidzashe/main.py')
+_pa_run(u'/home/Ngonidzashe/main.py')
+pip install --user python-telegram-bot
+exit()
+_pa_run(u'/home/Ngonidzashe/main.py')
+_pa_run(u'/home/Ngonidzashe/main.py')

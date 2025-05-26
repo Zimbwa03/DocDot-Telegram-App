@@ -1,0 +1,313 @@
+
+{
+  "cadaver": {
+    "head": {
+      "path": "head.PNG",
+      "labels": ["Temporal bone", "Mandible", "Zygomatic arch"]
+    },
+    "thorax": {
+      "path": "thorax.jpg",
+      "labels": ["Superior vena cava", "Aortic arch", "Pulmonary trunk"]
+    },
+    "dsa": {
+      "path": "dsa.PNG",
+      "labels": [
+        "1. Frontal crest",
+        "2. Foramen caecum",
+        "3. Foramina of cribriform plate",
+        "4. Body of sphenoid",
+        "5. Anterior clinoid process",
+        "6. Lesser wing of sphenoid",
+        "7. Cribriform plate",
+        "8. Orbital part of frontal bone",
+        "9. Crista galli"
+      ]
+    },
+    "brain1": {
+      "path": "brain1.PNG",
+      "labels": [
+        "A - posterior (dorsal) median sulcus",
+        "B - dura mater",
+        "C - posterior funiculus (column)",
+        "D - posterior horn",
+        "E - central canal",
+        "F - anterior funiculus",
+        "G - pia mater",
+        "H - anterior median fissure",
+        "I - adipose connective tissue in epidural space",
+        "J - subarachnoid space",
+        "K - posterior root",
+        "L - lateral funiculus",
+        "M - anterior horn",
+        "N - anterior root"
+      ]
+    },
+    "brain2": {
+      "path": "brain2.PNG",
+      "labels": [
+        "A - lumbar region of the spinal cord",
+        "B - conus medullaris",
+        "C - filum terminale",
+        "D - cauda equina"
+      ]
+    },
+    "brain3": {
+      "path": "brain3.PNG",
+      "labels": [
+        "A - superior sagittal sinus",
+        "B - inferior sagittal sinus",
+        "C - straight sinus",
+        "D - confluence of sinuses",
+        "E - transverse sinus"
+      ]
+    },
+    "brain4": {
+      "path": "brain4.PNG",
+      "labels": [
+        "A - cerebral cortex (of frontal lobe)",
+        "B - thalamus",
+        "C - internal capsule",
+        "D - lateral ventricle",
+        "E - superior and inferior colliculi/corpora quadrigemina",
+        "F - longitudinal fissure",
+        "G - corona radiata",
+        "H - corpus callosum",
+        "I - basal ganglia (caudate nucleus)",
+        "J - fornix",
+        "K - pineal gland/body",
+        "L - cerebellum"
+      ]
+    },
+    "brain5": {
+      "path": "brain5.PNG",
+      "labels": [
+        "A - corona radiata",
+        "B - cerebral cortex",
+        "C - corpus callosum",
+        "D - basal ganglia",
+        "E - thalamus"
+      ]
+    },
+    "brain6": {
+      "path": "brain6.PNG",
+      "labels": [
+        "A - superior sagittal sinus",
+        "B - corpus callosum",
+        "C - thalamus",
+        "D - fornix",
+        "E - straight sinus",
+        "F - 4th ventricle"
+      ]
+    },
+    "brain7": {
+      "path": "brain7.PNG",
+      "labels": [
+        "A - medulla oblongata",
+        "B - pituitary gland",
+        "C - longitudinal fissure",
+        "D - cerebellum (cortex)",
+        "E - pons",
+        "F - midbrain (mesencephalon)",
+        "G - temporal lobe of cerebrum",
+        "H - frontal lobe of cerebrum"
+      ]
+    },
+    "brain8": {
+      "path": "brain8.PNG",
+      "labels": [
+        "A - hypothalamus",
+        "B - midbrain (mesencephalon)",
+        "C - pons",
+        "D - medulla oblongata",
+        "E - corpus callosum",
+        "F - septum pellucidum",
+        "G - fornix",
+        "H - central sulcus",
+        "I - thalamus",
+        "J - tectal plate/corpora quadrigemina",
+        "K - fourth ventricle"
+      ]
+    },
+    "brain9": {
+      "path": "brain9.PNG",
+      "labels": [
+        "A - central sulcus",
+        "B - lateral fissure / sulcus",
+        "C - occipital lobe",
+        "D - parietal lobe",
+        "E - frontal lobe",
+        "F - temporal lobe",
+        "G - cerebellum"
+      ]
+    },
+    "brain10": {
+      "path": "brain10.PNG",
+      "labels": [
+        "A - lateral ventricle (right)",
+        "B - 3rd / third ventricle",
+        "D - cerebral / mesencephalic aquaduct",
+        "E - 4th / fourth ventricle",
+        "F - choroid plexus"
+      ]
+    },
+    "kidney1": {
+      "path": "Kidney1.PNG",
+      "labels": [
+        "A - segmental arteries",
+        "B - segmental veins",
+        "C - interlobular arteries",
+        "D - interlobular veins",
+        "E - arcuate vein",
+        "F - arcuate artery",
+        "G - interlobar artery",
+        "H - interlobar vein"
+      ]
+    },
+    "kidney2": {
+      "path": "Kidney2.PNG",
+      "labels": [
+        "A - distal convoluted tubule",
+        "B - afferent arteriole",
+        "C - podocyte, visceral layer of glomerular capsule covering capillary",
+        "D - glomerular (Bowman's) capsule",
+        "E - proximal convoluted tubule",
+        "F - glomerular capillaries",
+        "G - efferent arteriole"
+      ]
+    },
+    "kidney3": {
+      "path": "Kidney3.PNG",
+      "labels": [
+        "A - interlobular artery",
+        "B - glomerular capillaries/glomerulus",
+        "C - interlobular vein",
+        "D - arcuate artery",
+        "E - interlobar artery",
+        "F - interlobar vein",
+        "G - afferent arteriole",
+        "H - efferent arteriole",
+        "I - arcuate vein",
+        "J - vasa recta"
+      ]
+    },
+    "kidney4": {
+      "path": "kidney4.PNG",
+      "labels": [
+        "A - corpuscle",
+        "B - proximal convoluted tubule",
+        "C - descending and ascending limbs of the nephron loop (of Henle)",
+        "D - collecting duct",
+        "E - glomerular (Bowman's) capsule",
+        "F - distal convoluted tubule",
+        "G - renal papilla",
+        "H - minor calyx"
+      ]
+    },
+    "kidney5": {
+      "path": "kidney5.PNG",
+      "labels": [
+        "A - ureter (right)",
+        "B - urinary bladder",
+        "C - urethra"
+      ]
+    },
+    "kidney6": {
+      "path": "kidney6.PNG",
+      "labels": [
+        "A - ureter (right)",
+        "B - urinary bladder",
+        "C - urethra"
+      ]
+    },
+    "kidney8": {
+      "path": "kidney8.PNG",
+      "labels": [
+        "A - renal artery (right)",
+        "B - kidney (right)",
+        "C - ureter (right)",
+        "D - kidney (left)",
+        "E - renal vein (left)",
+        "F - ureter (left)",
+        "G - urinary bladder"
+      ]
+    },
+    "kidney10": {
+      "path": "kidney10.PNG",
+      "labels": [
+        "A - renal cortex",
+        "B - renal column",
+        "C - renal medulla/medullary pyramid",
+        "D - renal papillae",
+        "E - minor calyx",
+        "F - major calyx",
+        "G - renal pelvis",
+        "H - ureter"
+      ]
+    },
+    "kidney11": {
+      "path": "Kidney11.PNG",
+      "labels": [
+        "A - kidney (Right)",
+        "B - renal artery",
+        "C - renal vein",
+        "D - Ureter"
+      ]
+    },
+    "kidney12": {
+      "path": "kidney12.PNG",
+      "labels": [
+        "A - medulla",
+        "B - cortex",
+        "D - renal artery",
+        "E - renal vein",
+        "F - ureter",
+        "G - renal pyramid",
+        "H - renal column",
+        "I - renal papillae",
+        "L - renal capsule"
+      ]
+    }
+  },
+  "histology": {
+    "Histology1": {
+      "path": "Histology1.PNG",
+      "labels": [
+        "A - medulla",
+        "B - cortex",
+        "C - renal corpuscles"
+      ]
+    },
+    "Histology2": {
+      "path": "Histology2.PNG",
+      "labels": [
+        "A - thin nephron loop",
+        "B - collecting duct"
+      ]
+    },
+    "Histology3": {
+      "path": "Histology3.PNG",
+      "labels": [
+        "A - collecting duct",
+        "B - thin nephron loop"
+      ]
+    },
+    "Histology4": {
+      "path": "Histology4.PNG",
+      "labels": [
+        "A - proximal convoluted tubule",
+        "B - glomerulus",
+        "C - glomerular capsule",
+        "D - glomerular space",
+        "E - distal convoluted tubule"
+      ]
+    },
+    "Histology5": {
+      "path": "Histology5.PNG",
+      "labels": [
+        "A - submucosa",
+        "B - muscularis",
+        "C - mucosa - transitional epithelium"
+      ]
+    }
+  }
+}
