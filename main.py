@@ -4,8 +4,6 @@ async def delete_webhook():
     bot = Bot(token=BOT_TOKEN)
     await bot.delete_webhook()
 
-import os
-api_key = os.environ.get('API_KEY')
 
 import logging
 import sqlite3
@@ -20,7 +18,7 @@ from bs4 import BeautifulSoup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, MessageHandler, filters, ContextTypes
 from telegram import Bot, Update, InlineKeyboardButton, InlineKeyboardMarkup
 
- 
+
 # Configure logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -28,6 +26,16 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Configuration
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+BOT_NAME = "Docdot"
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+
+# Validate required environment variables
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN environment variable is required")
+if not OPENROUTER_API_KEY:
+    raise ValueError("OPENROUTER_API_KEY environment variable is required")
 
 CATEGORIES = {
     "Biostatistics": [],
@@ -120,7 +128,7 @@ def init_db():
         # Table exists, check for missing columns
         cursor.execute("PRAGMA table_info(questions)")
         existing_columns = {column[1]: column[2] for column in cursor.fetchall()}
-
+        
         for column_name, column_type in questions_schema.items():
             if column_name not in existing_columns and column_name != 'id':
                 try:
@@ -140,7 +148,7 @@ def init_db():
         # Table exists, check for missing columns
         cursor.execute("PRAGMA table_info(user_stats)")
         existing_columns = {column[1]: column[2] for column in cursor.fetchall()}
-
+        
         for column_name, column_type in user_stats_schema.items():
             if column_name not in existing_columns and column_name != 'user_id':
                 try:
