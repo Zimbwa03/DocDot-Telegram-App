@@ -5,6 +5,7 @@ async def delete_webhook():
     await bot.delete_webhook()
 
 
+import os
 import logging
 import sqlite3
 import json
