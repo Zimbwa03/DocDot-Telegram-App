@@ -4,6 +4,8 @@ async def delete_webhook():
     bot = Bot(token=BOT_TOKEN)
     await bot.delete_webhook()
 
+import os
+api_key = os.environ.get('API_KEY')
 
 import logging
 import sqlite3
