@@ -26,10 +26,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Configuration
-BOT_TOKEN = "7590867244:AAF6VvQIV41TV6T3S6XTvTievaQgbdaAbVI"
-BOT_NAME = "Docdot"
-OPENROUTER_API_KEY = "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"
 
 CATEGORIES = {
     "Biostatistics": [],
