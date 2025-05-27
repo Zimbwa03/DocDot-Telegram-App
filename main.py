@@ -990,7 +990,12 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "📋 /stats - Your Performance\n"
         "🗂 /categories - Browse Topics\n"
         "❓ /help - Get Assistance\n"
-        "💬 /ask - Ask Medical Questions\n\n"
+        "💬 /ask - Ask Medical Questions\n"
+        "🎯 /quiz - Start Quick Quiz\n"
+        "🏆 /leaderboard - View Rankings\n"
+        "🤖 /tutor - AI Tutoring\n"
+        "🔬 /image - Image Quiz\n"
+        "🎨 /menu - Show Main Menu\n\n"
         "━━━━━━━━━━━━━━━━━━━━━\n"
         "*Ready to test your medical knowledge?*"
     )
@@ -1019,6 +1024,86 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         parse_mode="Markdown",
         reply_markup=InlineKeyboardMarkup(keyboard)
     )
+
+async def menu_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Show main menu via command."""
+    await start(update, context)
+
+async def quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Start a quick quiz via command."""
+    user = update.effective_user
+    quiz_session = load_user_stats(user.id)
+    context.user_data['quiz_session'] = quiz_session
+    
+    # Get a random question
+    question = get_random_question(None, quiz_session)
+    if not question:
+        await update.message.reply_text("No questions available. Please try again later.")
+        return
+    
+    context.user_data['current_question'] = question
+    context.user_data['question_start_time'] = time.time()
+    
+    message_text = (
+        f"⚡ *QUICK QUIZ*\n"
+        "━━━━━━━━━━━━━━━━━━━━━\n\n"
+        f"{question['question']}\n\n"
+        "📍 Select an answer below:\n"
+        "*True or False*"
+    )
+    
+    keyboard = [
+        [InlineKeyboardButton("True", callback_data="answer_true"),
+         InlineKeyboardButton("False", callback_data="answer_false")],
+        [InlineKeyboardButton("🔄 New Question", callback_data="quick_quiz"),
+         InlineKeyboardButton("🏠 Main Menu", callback_data="start_menu")]
+    ]
+    
+    await update.message.reply_text(
+        message_text,
+        parse_mode="Markdown",
+        reply_markup=InlineKeyboardMarkup(keyboard)
+    )
+
+async def leaderboard_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Show leaderboard via command."""
+    # Get overall leaderboard
+    leaderboard = get_category_leaderboard(None)
+    
+    if not leaderboard:
+        message = "*🏆 LEADERBOARD*\n\nNo data available yet."
+    else:
+        message = "*🏆 OVERALL LEADERBOARD*\n\n"
+        for i, entry in enumerate(leaderboard[:10], 1):
+            if i == 1:
+                medal = "🥇"
+            elif i == 2:
+                medal = "🥈"
+            elif i == 3:
+                medal = "🥉"
+            else:
+                medal = f"{i}."
+            
+            message += f"{medal} *{entry['name']}*: {entry['accuracy']:.1f}%\n"
+    
+    keyboard = [
+        [InlineKeyboardButton("📊 Category Rankings", callback_data="leaderboard")],
+        [InlineKeyboardButton("🏠 Main Menu", callback_data="start_menu")]
+    ]
+    
+    await update.message.reply_text(
+        message,
+        parse_mode="Markdown",
+        reply_markup=InlineKeyboardMarkup(keyboard)
+    )
+
+async def tutor_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Start AI tutoring via command."""
+    await ai_tutoring_session(update, context)
+
+async def image_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Start image quiz via command."""
+    await image_quiz(update, context)
 
 async def show_main_categories(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -3897,10 +3982,15 @@ def main():
 
     # Add handlers
     application.add_handler(CommandHandler("start", start))
+    application.add_handler(CommandHandler("menu", menu_command))
     application.add_handler(CommandHandler("categories", categories_command))
     application.add_handler(CommandHandler("stats", stats_command))
     application.add_handler(CommandHandler("help", help_command))
     application.add_handler(CommandHandler("ask", ask_command))
+    application.add_handler(CommandHandler("quiz", quiz_command))
+    application.add_handler(CommandHandler("leaderboard", leaderboard_command))
+    application.add_handler(CommandHandler("tutor", tutor_command))
+    application.add_handler(CommandHandler("image", image_command))
 
     # Add message handler for collecting answers
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, collect_answers))
@@ -3961,6 +4051,7 @@ def main():
     application.add_handler(CallbackQueryHandler(handle_step_tutorials, pattern="^step_"))
     application.add_handler(CallbackQueryHandler(handle_ai_practice_generation, pattern="^gen_"))
     application.add_handler(CallbackQueryHandler(handle_ai_help_topic, pattern="^ai_help_"))
+    application.add_handler(CallbackQueryHandler(quiz_command, pattern="^quick_quiz$"))
 
     # Start the Bot with improved error handling
     try:
