@@ -18,7 +18,9 @@ from bs4 import BeautifulSoup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, MessageHandler, filters, ContextTypes
 from telegram import Bot, Update, InlineKeyboardButton, InlineKeyboardMarkup
 
-
+  BOT_TOKEN = "7590867244:AAGlwdCuj5_fIqecA_scF1oVaARP0esLjLM"
+    BOT_NAME = "Docdot"
+    OPENROUTER_API_KEY = "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"
 # Configure logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
